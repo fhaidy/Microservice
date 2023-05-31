@@ -1,6 +1,8 @@
 using AutoMapper;
 using MicroService.Ordering.Application.Features.Queries.GetOrders;
+using MicroService.Ordering.Application.Models;
 using MicroService.Ordering.Domain.Entities;
+using Order = MicroService.Ordering.Application.Models.Order;
 
 namespace MicroService.Ordering.Application.Mappings;
 
@@ -8,8 +10,7 @@ public class MappingProfile : Profile
 {
     public MappingProfile()
     {
-        CreateMap<Order, OrderViewModel>().ReverseMap();
-        // CreateMap<Order, CheckoutOrderCommand>().ReverseMap();
-        // CreateMap<Order, UpdateOrderCommand>().ReverseMap();
+        CreateMap<Domain.Entities.Order, Order>().ReverseMap();
+        CreateMap<Domain.Entities.Order, CheckoutOrder>().ReverseMap();
     }
 }
