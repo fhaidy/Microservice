@@ -11,7 +11,7 @@ public class CheckoutOrderCommandValidator : AbstractValidator<CheckoutOrderComm
             .NotNull()
             .MaximumLength(50).WithMessage("{UserName} must not exceed 50 characters.");
 
-        RuleFor(p => p.CheckoutOrder.BillingAddress.EmailAddress)
+        RuleFor(p => p.CheckoutOrder.EmailAddress)
             .NotEmpty().WithMessage("{EmailAddress} is required.");
 
         RuleFor(p => p.CheckoutOrder.TotalPrice)

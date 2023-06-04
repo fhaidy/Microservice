@@ -11,7 +11,7 @@ public class UpdateOrderValidator : AbstractValidator<UpdateOrderCommand>
             .NotNull()
             .MaximumLength(50).WithMessage("{UserName} must not exceed 50 characters.");
 
-        RuleFor(p => p.Order.BillingAddress.EmailAddress)
+        RuleFor(p => p.Order.EmailAddress)
             .NotEmpty().WithMessage("{EmailAddress} is required.");
 
         RuleFor(p => p.Order.TotalPrice)

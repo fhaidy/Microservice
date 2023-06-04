@@ -6,6 +6,9 @@ namespace MicroService.Ordering.Infrastructure.Data;
 
 public class OrderContext : DbContext
 {
+    public OrderContext()
+    {
+    }
     public OrderContext(DbContextOptions<OrderContext> options) : base(options)
     {
     }
@@ -20,11 +23,11 @@ public class OrderContext : DbContext
             {
                 case EntityState.Added:
                     entry.Entity.CreatedDate = DateTime.Now;
-                    entry.Entity.CreatedBy = "fhaidy";
+                    entry.Entity.CreatedBy = "swn";
                     break;
                 case EntityState.Modified:
                     entry.Entity.LastModifiedDate = DateTime.Now;
-                    entry.Entity.LastModifiedBy = "fhaidy";
+                    entry.Entity.LastModifiedBy = "swn";
                     break;
                 case EntityState.Detached:
                 case EntityState.Unchanged:

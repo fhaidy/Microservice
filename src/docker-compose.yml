@@ -7,6 +7,9 @@
     
   portainer:
     image: portainer/portainer-ce
+    
+  orderdb:
+    image: mcr.microsoft.com/mssql/server:2022-latest
   
   microservice.catalog.api:
     image: microservice.catalog.api
@@ -18,8 +21,13 @@
     image: microservice.basket.api
     build:
       context: .
-      dockerfile: Services/Basket/MicroService.Basket.API/Dockerfile
-  
+      dockerfile: Services/Basket/MicroService.Basket.API/Dockerfile  
+      
+  microservice.ordering.api:
+    image: microservice.ordering.api
+    build:
+      context: .
+      dockerfile: Services/Ordering/MicroService.Ordering.API/Dockerfile
     
 volumes:
   mongo_data:
